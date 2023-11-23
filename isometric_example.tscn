@@ -1,33 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://dfpco22pdonod"]
 
 [ext_resource type="TileSet" uid="uid://8fxou0tjirw8" path="res://isometric_tiles.tres" id="1_kk5ig"]
+[ext_resource type="Script" path="res://isometric_example.gd" id="1_s4v0r"]
 [ext_resource type="Texture2D" uid="uid://bdmuanl13pmyq" path="res://images/char.png" id="3_u4dg1"]
-
-[sub_resource type="GDScript" id="GDScript_k120p"]
-script/source = "extends CharacterBody2D
-
-
-const SPEED = 300.0
-
-var path
-var target
-
-func _physics_process(delta):
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis(\"ui_left\", \"ui_right\")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	move_and_slide()
-"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bwmw3"]
 size = Vector2(24, 31)
 
 [node name="IsometricExample" type="Node2D"]
+script = ExtResource("1_s4v0r")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -38,7 +19,6 @@ layer_0/tile_data = PackedInt32Array(2162697, 2, 0, 2031626, 1, 0, 2097162, 2, 0
 
 [node name="Character" type="CharacterBody2D" parent="."]
 position = Vector2(229, 270)
-script = SubResource("GDScript_k120p")
 
 [node name="Sprite2D" type="Sprite2D" parent="Character"]
 texture = ExtResource("3_u4dg1")

@@ -45,10 +45,7 @@ func setup_astar():
 
 func _input(event):
 	if event is InputEventMouseButton:
-		print(1)
 		if event.button_index == 1 and event.pressed == true:
-			print(1)
 			var path = nav.get_point_path(1, 15)
-			print(path)
 			$Line2D.set_points(path)
 
