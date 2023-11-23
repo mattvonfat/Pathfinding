@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0cs5aq5w53rk"]
+
+[ext_resource type="Script" path="res://isometric_example_astar.gd" id="1_5b52r"]
+[ext_resource type="TileSet" uid="uid://8fxou0tjirw8" path="res://isometric_tiles.tres" id="1_hxp5b"]
+
+[node name="IsometricExample" type="Node2D"]
+script = ExtResource("1_5b52r")
+
+[node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
+tile_set = ExtResource("1_hxp5b")
+format = 2
+layer_0/y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(2293770, 2, 0, 2162699, 1, 0, 2228235, 2, 0, 2293771, 2, 0, 2359307, 2, 0, 2424843, 2, 0, 2228236, 0, 0, 2293772, 1, 0, 2359308, 2, 0, 2424844, 2, 0, 2490380, 2, 0, 2359309, 1, 0, 2293773, 1, 0, 2228237, 1, 0, 2162700, 1, 0, 2097164, 1, 0)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="1" type="Marker2D" parent="Node"]
+position = Vector2(352, 287)
+
+[node name="2" type="Marker2D" parent="Node"]
+position = Vector2(367, 297)
+
+[node name="3" type="Marker2D" parent="Node"]
+position = Vector2(384, 304)
+
+[node name="4" type="Marker2D" parent="Node"]
+position = Vector2(399, 312)
+
+[node name="5" type="Marker2D" parent="Node"]
+position = Vector2(368, 280)
+
+[node name="6" type="Marker2D" parent="Node"]
+position = Vector2(383, 288)
+
+[node name="7" type="Marker2D" parent="Node"]
+position = Vector2(400, 297)
+
+[node name="8" type="Marker2D" parent="Node"]
+position = Vector2(416, 304)
+
+[node name="9" type="Marker2D" parent="Node"]
+position = Vector2(382, 240)
+
+[node name="10" type="Marker2D" parent="Node"]
+position = Vector2(400, 248)
+
+[node name="11" type="Marker2D" parent="Node"]
+position = Vector2(415, 256)
+
+[node name="12" type="Marker2D" parent="Node"]
+position = Vector2(431, 265)
+
+[node name="13" type="Marker2D" parent="Node"]
+position = Vector2(401, 232)
+
+[node name="14" type="Marker2D" parent="Node"]
+position = Vector2(416, 239)
+
+[node name="15" type="Marker2D" parent="Node"]
+position = Vector2(432, 247)
+
+[node name="16" type="Marker2D" parent="Node"]
+position = Vector2(448, 256)
+
+[node name="17" type="Marker2D" parent="Node"]
+position = Vector2(383, 259)
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(1, 0)
+width = 3.0

@@ -1,0 +1,48 @@
+[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://8fxou0tjirw8"]
+
+[ext_resource type="Texture2D" uid="uid://dimhbco5ob6ir" path="res://images/tile2.png" id="1_3bg2s"]
+[ext_resource type="Texture2D" uid="uid://dnv2jkiafl02n" path="res://images/tile3.png" id="2_xixir"]
+[ext_resource type="Texture2D" uid="uid://bd7tvam0xgvyh" path="res://images/tile.png" id="3_wfou2"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_bmdgm"]
+vertices = PackedVector2Array(-0.625, -39.75, 16.125, -31.5, -0.125, -23, -4.375, -25.75, -15.625, -32, -11.375, -29.25, -5.15, 5.425, -12.25, 1.875)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(3, 6, 7, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-0.625, -39.75, 16.125, -31.5, -0.125, -23, -4.375, -25.75, -5.15, 5.425, -12.25, 1.875, -11.375, -29.25, -15.625, -32)])
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_icxax"]
+texture = ExtResource("1_3bg2s")
+texture_region_size = Vector2i(32, 48)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 16)
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_bmdgm")
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_dmweo"]
+vertices = PackedVector2Array(-0.3125, -39.5, 16.3125, -31.5, -0.3125, -23.375, -16.3125, -31.5)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-0.3125, -39.5, 16.3125, -31.5, -0.3125, -23.375, -16.3125, -31.5)])
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1hprw"]
+texture = ExtResource("2_xixir")
+texture_region_size = Vector2i(32, 48)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 16)
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_dmweo")
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_1bsxb"]
+vertices = PackedVector2Array(0, -8, 16.7496, 0.53033, 0.132583, 8.83883, -16.838, 0.441942)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, -8, 16.7496, 0.53033, 0.132583, 8.83883, -16.838, 0.441942)])
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u52if"]
+texture = ExtResource("3_wfou2")
+texture_region_size = Vector2i(32, 16)
+0:0/0 = 0
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_1bsxb")
+
+[resource]
+tile_shape = 1
+tile_size = Vector2i(32, 16)
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_icxax")
+sources/1 = SubResource("TileSetAtlasSource_1hprw")
+sources/2 = SubResource("TileSetAtlasSource_u52if")

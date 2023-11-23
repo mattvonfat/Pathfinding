@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfpco22pdonod"]
+
+[ext_resource type="TileSet" uid="uid://8fxou0tjirw8" path="res://isometric_tiles.tres" id="1_kk5ig"]
+[ext_resource type="Texture2D" uid="uid://bdmuanl13pmyq" path="res://images/char.png" id="3_u4dg1"]
+
+[sub_resource type="GDScript" id="GDScript_k120p"]
+script/source = "extends CharacterBody2D
+
+
+const SPEED = 300.0
+
+var path
+var target
+
+func _physics_process(delta):
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction = Input.get_axis(\"ui_left\", \"ui_right\")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwmw3"]
+size = Vector2(24, 31)
+
+[node name="IsometricExample" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
+tile_set = ExtResource("1_kk5ig")
+format = 2
+layer_0/y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(2162697, 2, 0, 2031626, 1, 0, 2097162, 2, 0, 2162698, 2, 0, 2228234, 2, 0, 2293770, 2, 0, 2097163, 1, 0, 2162699, 1, 0, 2228235, 2, 0, 2293771, 2, 0, 2359307, 2, 0, 2424843, 2, 0, 2228236, 0, 0, 2293772, 1, 0, 2359308, 2, 0, 2424844, 2, 0, 2490380, 2, 0, 2555916, 2, 0, 2359309, 1, 0, 2424845, 1, 0, 2490381, 2, 0, 2555917, 2, 0, 2621453, 2, 0, 2686989, 2, 0, 2490382, 1, 0, 2555918, 1, 0, 2621454, 2, 0, 2686990, 2, 0, 2752526, 2, 0, 2621455, 1, 0, 2162693, 2, 0, 2031622, 2, 0, 2097158, 2, 0, 2162694, 2, 0, 2228230, 2, 0, 2293766, 2, 0, 1900551, 2, 0, 1966087, 2, 0, 2031623, 2, 0, 2097159, 2, 0, 2162695, 2, 0, 2228231, 2, 0, 2293767, 2, 0, 2359303, 2, 0, 2424839, 2, 0, 1769480, 1, 0, 1835016, 2, 0, 1900552, 2, 0, 1966088, 2, 0, 2031624, 2, 0, 2097160, 2, 0, 2162696, 2, 0, 2228232, 2, 0, 2293768, 2, 0, 2359304, 2, 0, 2424840, 2, 0, 2490376, 2, 0, 2555912, 2, 0, 1835017, 1, 0, 1900553, 1, 0, 1966089, 2, 0, 2031625, 2, 0, 2097161, 2, 0, 2228233, 2, 0, 2293769, 2, 0, 2359305, 2, 0, 2424841, 2, 0, 2490377, 2, 0, 2555913, 2, 0, 2621449, 2, 0, 2686985, 2, 0, 1966090, 1, 0, 2359306, 2, 0, 2424842, 2, 0, 2490378, 2, 0, 2555914, 2, 0, 2621450, 2, 0, 2686986, 2, 0, 2752522, 2, 0, 2818058, 2, 0, 2490379, 2, 0, 2555915, 2, 0, 2621451, 2, 0, 2686987, 2, 0, 2752523, 2, 0, 2818059, 2, 0, 2883595, 2, 0, 2949131, 2, 0, 2621452, 2, 0, 2686988, 2, 0, 2752524, 2, 0, 2818060, 2, 0, 2883596, 2, 0, 2949132, 2, 0, 3014668, 2, 0, 2752525, 2, 0, 2818061, 2, 0, 2883597, 2, 0, 2555919, 1, 0, 2490383, 1, 0, 2424846, 1, 0, 2359310, 1, 0, 2293773, 1, 0, 2228237, 1, 0, 2162700, 1, 0, 2097164, 1, 0, 2031628, 1, 0, 1966092, 1, 0, 1900555, 1, 0, 2490384, 1, 0, 2424848, 1, 0, 2359313, 1, 0, 2293776, 1, 0, 2228240, 1, 0, 2162703, 1, 0, 2097167, 1, 0, 1966094, 1, 0, 2031630, 1, 0, 1900557, 1, 0, 1835021, 1, 0, 1769484, 1, 0, 1703948, 1, 0, 1638411, 1, 0, 1572875, 1, 0, 1703945, 1, 0, 1638409, 1, 0, 1572874, 1, 0, 1507338, 1, 0, 1638410, 1, 0, 1703946, 1, 0, 1769481, 1, 0, 1835019, 1, 0, 1769483, 1, 0, 1703947, 1, 0, 1769482, 1, 0, 1835018, 1, 0, 1900554, 1, 0, 1966091, 1, 0, 2031627, 1, 0, 1835020, 1, 0, 1900556, 1, 0, 1966093, 1, 0, 2031629, 1, 0, 2097165, 1, 0, 2162701, 1, 0, 2097166, 1, 0, 2162702, 1, 0, 2228238, 1, 0, 2293774, 1, 0, 2228239, 1, 0, 2293775, 1, 0, 2359311, 1, 0, 2424847, 1, 0, 2359312, 1, 0)
+
+[node name="Character" type="CharacterBody2D" parent="."]
+position = Vector2(229, 270)
+script = SubResource("GDScript_k120p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Character"]
+texture = ExtResource("3_u4dg1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_bwmw3")
